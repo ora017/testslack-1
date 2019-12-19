@@ -8,6 +8,6 @@ build:
         code: apt install -y curl
     - slack-notifier:
         url: $SLACK_URL
-    channel: notifications
-    custom_message: Deploying $WERCKER_GIT_BRANCH to $WERCKER_DEPLOYTARGET_NAME ($WERCKER_DEPLOY_URL)
-    custom_color: #439fe0
+        channel: notifications
+        custom_message: Deploying $WERCKER_GIT_BRANCH to $WERCKER_DEPLOYTARGET_NAME ($WERCKER_DEPLOY_URL)
+        custom_color: #439fe0
