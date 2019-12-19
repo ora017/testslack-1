@@ -1,0 +1,13 @@
+box: debian:stable-slim
+build:
+    steps:
+    - install-packages:
+        packages: curl
+    - script:
+        name: install composer
+        code: apt install -y curl
+    - slack-notifier:
+        url: $SLACK_URL
+    channel: notifications
+    custom_message: Deploying $WERCKER_GIT_BRANCH to $WERCKER_DEPLOYTARGET_NAME ($WERCKER_DEPLOY_URL)
+    custom_color: #439fe0
